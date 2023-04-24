@@ -32,24 +32,33 @@ public class MainPage {
     private WebElement InstructorsButton;
     @FindBy(xpath = "/html/body/section[7]/div/div/div[1]/div/div/a[1]/i")
     private WebElement JohnTwitterButton;
+
     @FindBy(xpath = "/html/body/section[7]/div/div/div[1]/div/div/img")
     private WebElement JohnDoeButton;
+
     @FindBy(xpath = "/html/body/section[7]/div/div/div[1]/div/div/a[2]/i")
     private WebElement JohnFacebookButton;
+
     @FindBy(xpath = "/html/body/section[7]/div/div/div[1]/div/div/a[3]/i")
     private WebElement JohnLinkedinButton;
+
     @FindBy(xpath = "/html/body/section[7]/div/div/div[1]/div/div/a[4]/i")
     private WebElement JohnInstagramButton;
+    @FindBy(xpath = "/html/body/nav/div/div/ul/li[1]/a")
+    private WebElement WhatYouLearnbutton;
+
+    @FindBy(xpath = "/html/body/section[4]/div/div/div[1]/img")
+    private WebElement CSSbutton;
 
 
 
     public MainPage(WebDriver driver){
      PageFactory.initElements(driver,this);
     }
-public void clickOnSubmitButton(){
+    public void clickOnSubmitButton(){
         this.submitButton.click();
 }
-public void writeEmailtoEmailField(String email){
+    public void writeEmailtoEmailField(String email){
         this.emaiField.sendKeys(email);
 }
     public void the_confirmation_pop_up_appears() {
@@ -93,6 +102,12 @@ public void writeEmailtoEmailField(String email){
     }
     public void clickonEachSocialMediaButton(){
         this.JohnTwitterButton.click();
+    }
+    public void IclickonWhatYouLearnbutton(){
+        this.WhatYouLearnbutton.click();
+    }
+    public WebElement getCSSbutton(){
+        return this.CSSbutton;
     }
 
     }

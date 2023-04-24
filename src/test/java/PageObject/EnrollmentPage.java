@@ -27,6 +27,10 @@ public class EnrollmentPage {
 
     @FindBy(xpath = "/html/body/div/div/section/div/form/div[1]/button")
     private WebElement NextButton;
+    @FindBy(xpath = "/html/body/div/div/section/div/form/div[1]/h3")
+    private WebElement PersonalInformationText;
+
+
 
     public void writeFirstName(String firstname){
         this.FirstNameField.sendKeys(firstname);
@@ -41,6 +45,9 @@ public class EnrollmentPage {
         this.PasswordField.sendKeys(password);
 
     }
+    public String getPersonalInformationText(){
+        return this.PersonalInformationText.getText();
+    }
     public  void confirmPassword(String password){
         this.ConfirmPasswordField.sendKeys(password);
     }
@@ -48,6 +55,15 @@ public class EnrollmentPage {
         this.NextButton.click();
     }
 
+
+
+    public void fillInPersonalInformation() {
+        writeFirstName("Sava");
+        writeLastName("Eduard");
+        writeUserName("eduard192");
+        writePassword("xxxxx");
+        confirmPassword("xxxxx");
+    }
 
 
 

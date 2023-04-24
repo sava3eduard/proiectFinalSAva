@@ -10,7 +10,7 @@ public class ContactInformation {
     public ContactInformation (WebDriver driver){
     PageFactory.initElements(driver,this);
 }
-    @FindBy(xpath = "/html/body/div/div/section/div/form/div[2]/div[1]/input")
+    @FindBy(xpath = "//*[@id=\"email\"]")
     private WebElement EmailField;
 
     @FindBy(xpath = "//*[@id=\"phone\"]")
@@ -32,7 +32,7 @@ public class ContactInformation {
     public void WriteEmail(String email){
         this.EmailField.sendKeys(email);
     }
-    public void WritePhoneField(int phone){
+    public void WritePhoneField(String phone){
         this.PhoneField.sendKeys(phone);
     }
     public void WriteCountryField(String country){
@@ -47,6 +47,15 @@ public class ContactInformation {
     public void clickonNextButton (){
         this.NextButton.click();
     }
+
+    public void fillContactInformation(){
+        WriteEmail("test@tester.ro");
+        WritePhoneField("0738523580");
+        WriteCountryField("brasov");
+        WriteCityField("brasov");
+        WritePostcodeField("e139au");
+    }
+
 
 
 
